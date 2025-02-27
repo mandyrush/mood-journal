@@ -1,6 +1,10 @@
+import { auth } from '@clerk/nextjs/server';
 import Link from 'next/link';
 
-const Home = () => {
+const Home = async () => {
+  const { userId } = await auth();
+  let href = userId ? '/journal' : '/sign-up';
+
   return (
     <div className="w-screen h-screen bg-black flex justify-center items-center text-white">
       <div className="w-full max-w-[600px] mx-auto">
@@ -9,7 +13,7 @@ const Home = () => {
           Track your mood with journal entries
         </p>
         <div>
-          <Link href="/journal">
+          <Link href={href}>
             <button className="bg-blue-600 px-4 py-2 rounded-lg text-xl">
               Get Started
             </button>

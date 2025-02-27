@@ -1,0 +1,3 @@
+-- ALTER TABLE "Analysis" ALTER COLUMN "id" SET DATA TYPE smallserial;--> statement-breakpoint
+-- ALTER TABLE "User" ALTER COLUMN "id" SET DATA TYPE smallserial;--> statement-breakpoint
+-- ALTER TABLE "JournalEntry" ALTER COLUMN "id" SET DATA TYPE smallserial;
